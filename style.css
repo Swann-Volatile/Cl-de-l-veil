@@ -1,0 +1,671 @@
+body {
+    background-color: #0a0a0a; /* Set a black background */
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #0f0f0f;
+    padding: 20px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00ff99;
+    text-align: center;
+    margin: 0;
+    font-family: 'univerty.roman', serif;
+    text-shadow: 2px 2px 5px rgba(0, 255, 153, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #00ff99 !important;
+    font-family: 'brushed.script';
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #00ff99;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.gradient-title {
+    font-size: 3.5rem;
+    font-weight: 600;
+    background: linear-gradient(90deg, #00ff99, #00ccff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property */
+    color: transparent; /* Ensure text color is transparent for gradient to show */
+    text-shadow: 2px 2px 6px rgba(0, 255, 153, 0.4);
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: #dddddd;
+    margin-bottom: 40px;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.button, .button-outline {
+    padding: 15px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.3s, color 0.3s;
+}
+
+.button {
+    background: #00ff99;
+    color: #0a0a0a;
+}
+
+.button:hover {
+    background: #00ccff;
+    color: #0a0a0a;
+}
+
+.button-outline {
+    border: 2px solid #00ff99;
+    color: #00ff99;
+    background: transparent;
+}
+
+.button-outline:hover {
+    background: #00ff99;
+    color: #0a0a0a;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9rem;
+    color: #888888;
+    background: #0f0f0f;
+}
+
+/* Formulaire */
+.form-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 12px;
+    font-size: 1em;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 5px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+button {
+    padding: 15px 30px;
+    margin-top: 20px;
+    background: #00ff99;
+    border: none;
+    border-radius: 8px;
+    color: #0a0a0a;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+}
+
+button:hover {
+    background: #00ccff;
+    color: #0a0a0a;
+}
+
+/* --------- AJOUT : STYLE DE LA ZONE D'AVIS --------- */
+#avis {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.2);
+}
+
+#avis h2 {
+    font-size: 2.5rem;
+    color: #00ff99;
+    margin-bottom: 20px;
+}
+
+#avis-info {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #cccccc;
+}
+
+#form-avis {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#form-avis .form-row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#form-avis label {
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #00ff99;
+}
+
+#form-avis select, #form-avis textarea {
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #00ff99;
+    border-radius: 5px;
+    background: transparent;
+    color: #fff;
+}
+
+#form-avis textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+#form-avis button {
+    background-color: #00ff99;
+    color: #0a0a0a;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#form-avis button:hover {
+    background-color: #00ccff;
+}
+
+#avis-display {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.avis-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #00ff99;
+    border-radius: 5px;
+}
+
+.logo-comment {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Style du logo étoile */
+#logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#logo img {
+    width: 50px;
+    height: 50px;
+}
+ 
+/* Style de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Titres et sous-titres */
+h1.gradient-title {
+    font-size: 36px;
+    color: #4CAF50;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #555;
+}
+
+/* Boutons */
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button, .button-outline {
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button-outline {
+    background-color: transparent;
+    border: 2px solid #4CAF50;
+}
+
+/* Compteur de visiteurs et moyenne des notes */
+.small-text {
+    font-size: 14px;
+}
+
+#compteur-visiteurs h2, #moyenne-notes h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+#compteur-visiteurs p, #moyenne-notes p {
+    font-size: 14px;
+}
+
+/* Formulaire de commentaire */
+#form-commentaire {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+select {
+    margin-bottom: 10px;
+}
+
+/* Styles des icônes d'étoiles */
+#note {
+    display: flex;
+    justify-content: space-between;
+    width: 250px;
+    margin-top: 10px;
+}
+
+#note img {
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Liste des commentaires */
+#liste-commentaires {
+    margin-top: 20px;
+}
+
+.commentaire {
+    background-color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+}
+
+.commentaire p {
+    margin: 5px 0;
+}
+
+/* ---------------------------------- PAGE D'ACCUEIL ---------------------------------- */
+body {
+    background-image: url('aurore_boreale.jpg');
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #0a0a0a;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: #0f0f0f;
+    padding: 20px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    color: #00ff99;
+    text-align: center;
+    margin: 0;
+    font-family: 'univerty.roman', serif;
+    text-shadow: 2px 2px 5px rgba(0, 255, 153, 0.5);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #00ff99 !important;
+    font-family: 'brushed.script';
+}
+
+/* Styles de la page d'accueil : Navigation, bouton, etc. */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 0;
+    margin: 0;
+}
+
+/* ... Les autres styles de la page d'accueil ... */
+
+/* ---------------------------------- CREATION DU SITE WEB ---------------------------------- */
+/* Styles spécifiques à la section de création de site */
+.creation-site-container {
+    background-color: #000; /* noir */
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 700px;
+    margin: auto;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.titre-gradient {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #00ff00, #66ff66, #00cc00);
+    -webkit-background-clip: text;
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.prix-affiche {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    text-align: center;
+    color: #00ff99;
+}
+
+/* Bubble options style example */
+.bubble-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.bubble-option {
+    background-color: #111;
+    padding: 1rem;
+    border-radius: 20px;
+    text-align: center;
+    transition: 0.3s;
+    color: white;
+}
+
+/* Médias queries pour la responsivité */
+@media screen and (max-width: 768px) {
+    .creation-site-container {
+        padding: 1.5rem;
+        margin: 1rem;
+        width: auto;
+    }
+
+    .bubble-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .bubble-option {
+        width: 90%;
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+
+    .titre-gradient {
+        font-size: 1.6rem;
+    }
+
+    .prix-affiche {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titre-gradient {
+        font-size: 1.4rem;
+    }
+
+    .prix-affiche {
+        font-size: 1.1rem;
+    }
+
+    .bubble-option {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .button {
+        font-size: 1rem;
+    }
+}
+
+
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    width: 40px; /* plus large */
+    height: 100%;
+    background: linear-gradient(to bottom, #00ff99, #ffd700, #00ff99);
+    z-index: 999;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: pulse 6s infinite ease-in-out;
+    filter: blur(6px); /* plus diffus */
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scaleX(1.05);
+    }
+}
+
+
+
+body {
+    background-color: #000;
+    overflow: auto;
+    position: relative;
+}
+
+#mouse-light {
+    position: fixed;
+    width: 300px;
+    height: 300px;
+    pointer-events: none;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0, 255, 153, 0.4), rgba(255, 215, 0, 0.2), transparent 70%);
+    mix-blend-mode: screen;
+    filter: blur(60px);
+    z-index: 1;
+    transition: background 0.4s;
+}
+
+
+
+
+
+.abonnement-explanation {
+    margin-top: 30px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .description-title {
+    font-size: 1.6em;
+    font-weight: bold;
+    color: #4a90e2;
+    margin-bottom: 10px;
+  }
+  
+  .abonnement-explanation p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  .abonnement-explanation ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    font-size: 1.1em;
+    color: #444;
+  }
+  
+  .abonnement-explanation ul li {
+    margin-bottom: 10px;
+  }
+  
+  .abonnement-explanation p:last-child {
+    font-weight: 600;
+    color: #2d6b99;
+  }
+  
+
+
+  .privacy-link {
+    display: inline-flex;
+    align-items: center; /* Alignement de l'icône et du texte */
+    color: white; /* Texte et icône en blanc par défaut */
+    font-size: 12px; /* Texte plus petit */
+    text-decoration: none; /* Enlever le soulignement */
+    font-weight: normal; /* Poids de texte plus léger */
+    margin-bottom: 10px;
+    transition: color 0.3s ease; /* Transition de couleur */
+}
+
+.privacy-link:hover {
+    color: #66b3ff; /* Bleu clair lors du survol */
+}
+
+.fingerprint {
+    font-size: 14px; /* Taille de l'icône plus petite */
+    margin-right: 6px; /* Espacement entre l'icône et le texte */
+}
+
+
