@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clé de l'Éveil</title>
+    <link rel="stylesheet" href="style.css"> <!-- Ton fichier CSS -->
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            height: 100vh;
+            color: white;
+            overflow-x: hidden;
+            transition: background 0.2s ease;
+            background: radial-gradient(circle at center, #000000, #0d0d0d);
+        }
+
+        .stars .star {
+            font-size: 24px;
+            color: gray;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .stars .star.gold {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="formulaire.html">Formulaire</a></li>
+                <li><a href="mailto:brunswann135@gmail.com?subject=Demande%20de%20contact&body=Bonjour,%0AJe%20souhaite%20entrer%20en%20contact%20avec%20vous.">Contactez-moi</a></li>
+                <li><a href="notice.html">Notice</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 class="gradient-title">Clé de l'Éveil</h1>
+        <p class="subtitle">Libérez votre destin, explorez vos synchronicités...</p>
+
+        <!-- Section des boutons -->
+        <div class="buttons">
+            <a href="url_de_la_formation.html" class="button">Découvre ta voix intérieure</a>
+            <a href="creation-site.html" class="button-outline">Créer mon site</a>
+        </div>
+
+        <br>
+
+        <!-- Compteur de visiteurs -->
+        <div id="compteur-visiteurs" class="info-box" style="color: gold;">
+            <p>Nombre de visiteurs : <span id="visiteurs" style="color: gold;">10</span></p>
+        </div>
+
+        <!-- Section des commentaires -->
+        <div id="commentaires" class="comment-section">
+            <h4>Commentaires</h4>
+            <form id="form-commentaire" class="comment-form">
+            <textarea id="commentaire" placeholder="Votre commentaire..." required style="background-color: rgb(8, 8, 8); color: white;"></textarea>
+            <div class="rating-container"></div>
+                <label for="note">Votre note :</label>
+                <div id="note" class="stars">
+                    <span class="star" data-note="1" onclick="remplirEtoiles(1)">&#9733;</span>
+                    <span class="star" data-note="2" onclick="remplirEtoiles(2)">&#9733;</span>
+                    <span class="star" data-note="3" onclick="remplirEtoiles(3)">&#9733;</span>
+                    <span class="star" data-note="4" onclick="remplirEtoiles(4)">&#9733;</span>
+                    <span class="star" data-note="5" onclick="remplirEtoiles(5)">&#9733;</span>
+                </div>
+
+                 
+                <p id="note-moyenne">Note moyenne : <span id="moyenne">0</span>/5</p>
+                <button type="submit" class="btn-submit">Ajouter le commentaire</button>
+            </form>
+
+
+            
+            <br>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+            <a href="politique.html" class="privacy-link">
+                <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
+            </a>
+    
+
+        
+            <br>
+            <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;"></div>
+                <!-- Les commentaires vont apparaître ici dynamiquement -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 Oiseau Volatile. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script> <!-- Ton fichier JavaScript -->
+
+    <script>
+        function remplirEtoiles(note) {
+            const stars = document.querySelectorAll('.stars .star');
+            stars.forEach((star, index) => {
+                if (index < note) {
+                    star.classList.add('gold');
+                } else {
+                    star.classList.remove('gold');
+                }
+            });
+        }
+
+        // Fond dynamique basé sur la position de la souris
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            const r = Math.floor(20 + 100 * x); // Teinte chaude
+            const g = Math.floor(50 + 100 * y); // Teinte naturelle
+            const b = Math.floor(100 + 120 * (1 - x)); // Teinte céleste
+
+            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgb(${r},${g},${b}), black)`;
+        });
+    </script>
+
+</body>
+</html>
