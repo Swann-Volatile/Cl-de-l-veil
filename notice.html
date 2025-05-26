@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Votre projet web</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background: #0a0f2c;
+            color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        .halo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, rgba(10, 15, 44, 0) 80%);
+            pointer-events: none;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: background 0.3s ease;
+            z-index: 1;
+        }
+
+        .container {
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            padding: 40px;
+            border-radius: 20px;
+            background: radial-gradient(circle at center, #0a0f2c, #0a0a0a);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.05);
+            transition: background 0.5s ease;
+            z-index: 2;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        h1, h2 {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 40px;
+            font-weight: 400;
+            color: #ccc;
+        }
+
+        p {
+            margin: 20px 0;
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #bbb;
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="halo" id="halo"></div>
+
+<div class="container" id="container">
+    <h1>Créez un site qui vous ressemble</h1>
+
+    <div class="section">
+        <h2>Une vision unique, un projet sur-mesure</h2>
+        <p>Vous avez une idée précise, un rêve, une ambition.<br>
+        Nous sommes là pour la concrétiser avec vous.<br>
+        Des sites modernes, élégants, pensés pour refléter votre identité.</p>
+    </div>
+
+    <div class="section">
+        <h2>Votre projet en 3 étapes</h2>
+        <p><strong>1. Comprendre vos besoins :</strong> Construire ensemble une base solide.<br>
+        <strong>2. Design sur-mesure & Développement :</strong> Un site esthétique et intuitif.<br>
+        <strong>3. Tests et Mise en ligne :</strong> Un site prêt à captiver vos visiteurs.</p>
+    </div>
+
+    <div class="section">
+        <h2>Un site à votre image</h2>
+        <p>Sécurisé, rapide et pensé pour durer. Votre réussite est notre priorité.</p>
+    </div>
+
+    <div class="section">
+        <h2>Un projet sans stress</h2>
+        <p>Créer un site peut sembler stressant.<br>
+        Avec nous, tout devient simple, fluide et rassurant.</p>
+    </div>
+
+</div>
+
+<script>
+    const halo = document.getElementById('halo');
+    const container = document.getElementById('container');
+    let animationFrame;
+
+    document.addEventListener('mousemove', function(e) {
+        const x = e.clientX;
+        const y = e.clientY;
+
+        cancelAnimationFrame(animationFrame);
+        animationFrame = requestAnimationFrame(() => {
+            halo.style.left = `${x}px`;
+            halo.style.top = `${y}px`;
+
+            const xPercent = e.clientX / window.innerWidth;
+            const yPercent = e.clientY / window.innerHeight;
+
+            const blue = Math.floor(10 + xPercent * 30);
+            const gold = Math.floor(200 + yPercent * 30);
+
+            container.style.background = `radial-gradient(circle at ${xPercent * 100}% ${yPercent * 100}%, rgb(${gold},${gold - 50},${blue}), #0a0a0a)`;
+        });
+    });
+</script>
+
+</body>
+</html>
