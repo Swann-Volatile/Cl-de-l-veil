@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire Oiseau Volatile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #f2f2f2;
+            padding: 20px;
+            margin: 0;
+        }
+        form {
+            background: #1a1a1a;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1e90ff;
+        }
+        fieldset {
+            border: none;
+            margin-bottom: 15px;
+            padding: 0;
+        }
+        legend {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #00bfff;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ddd;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="color"],
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            margin-bottom: 12px;
+            border: 1px solid #555;
+            border-radius: 4px;
+            background-color: #333;
+            color: #fff;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        button {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            display: block;
+            margin: 20px auto 0 auto;
+        }
+        button:hover {
+            background-color: #0d75d8;
+        }
+        .confirmation-message {
+            display: none;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+                margin: 0 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulaire du création de site - Oiseau Volatile</h1>
+    <form id="form" action="mailto:contact@oiseauvolatile.com" method="post" enctype="text/plain">
+        <!-- Informations personnelles -->
+        <fieldset>
+            <legend>Informations personnelles</legend>
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="email@exemple.com" required>
+            <label for="telephone">Numéro de téléphone :</label>
+            <input type="tel" id="telephone" name="telephone" placeholder="0X XX XX XX XX" required>
+        </fieldset>
+
+        <!-- Type de site -->
+        <fieldset>
+            <legend>Type de site souhaité</legend>
+            <label><input type="radio" name="type_site" value="Site personnel" required> Site personnel</label>
+            <label><input type="radio" name="type_site" value="Blog"> Blog</label>
+            <label><input type="radio" name="type_site" value="Portfolio"> Portfolio</label>
+            <label><input type="radio" name="type_site" value="Entreprise"> Site d'entreprise</label>
+            <label><input type="radio" name="type_site" value="E-commerce"> E-commerce</label>
+            <label><input type="radio" name="type_site" value="Autre"> Autre :</label>
+            <input type="text" name="type_site_autre" placeholder="Précisez le type de site">
+        </fieldset>
+
+        <!-- Objectif du site -->
+        <fieldset>
+            <legend>Objectif du site</legend>
+            <label><input type="radio" name="objectif" value="Présenter produits/services" required> Présenter des produits/services</label>
+            <label><input type="radio" name="objectif" value="Créer un blog"> Créer un blog</label>
+            <label><input type="radio" name="objectif" value="Vendre en ligne"> Vendre en ligne</label>
+            <label><input type="radio" name="objectif" value="Autre"> Autre :</label>
+            <input type="text" name="objectif_autre" placeholder="Précisez l'objectif">
+        </fieldset>
+
+        <!-- Design souhaité -->
+        <fieldset>
+            <legend>Design souhaité</legend>
+            <label><input type="radio" name="design_style" value="Minimaliste" required> Minimaliste</label>
+            <label><input type="radio" name="design_style" value="Moderne"> Moderne</label>
+            <label><input type="radio" name="design_style" value="Élégant"> Élégant</label>
+            <label><input type="radio" name="design_style" value="Autre"> Autre :</label>
+            <input type="text" name="design_style_autre" placeholder="Précisez le style">
+            <label for="couleur_principale">Couleur principale :</label>
+            <input type="color" id="couleur_principale" name="couleur_principale" value="#1e90ff">
+        </fieldset>
+
+        <!-- Navigation souhaitée -->
+        <fieldset>
+            <legend>Navigation souhaitée</legend>
+            <label><input type="radio" name="navigation" value="Menu en haut" required> Menu en haut</label>
+            <label><input type="radio" name="navigation" value="Menu en bas"> Menu en bas</label>
+            <label><input type="radio" name="navigation" value="Menu latéral"> Menu latéral</label>
+            <label><input type="radio" name="navigation" value="Autre"> Autre :</label>
+            <input type="text" name="navigation_autre" placeholder="Précisez la navigation">
+        </fieldset>
+
+        <!-- Fonctionnalités souhaitées -->
+        <fieldset>
+            <legend>Fonctionnalités souhaitées</legend>
+            <label><input type="checkbox" name="fonctionnalites" value="Formulaire de contact"> Formulaire de contact</label>
+            <label><input type="checkbox" name="fonctionnalites" value="Blog"> Blog</label>
+            <label><input type="checkbox" name="fonctionnalites" value="Galerie photo"> Galerie photo</label>
+            <label><input type="checkbox" name="fonctionnalites" value="Espace membre"> Espace membre</label>
+            <label><input type="checkbox" name="fonctionnalites" value="Paiement en ligne"> Paiement en ligne</label>
+            <label><input type="checkbox" name="fonctionnalites" value="Autre"> Autre :</label>
+            <input type="text" name="fonctionnalites_autre" placeholder="Précisez les fonctionnalités">
+        </fieldset>
+
+        <!-- Domaine et hébergement -->
+        <fieldset>
+            <legend>Domaine et hébergement</legend>
+            <label><input type="radio" name="domaine_hosting" value="Oui" required> Oui, j'ai déjà un domaine et un hébergement</label>
+            <label><input type="radio" name="domaine_hosting" value="Non"> Non, je n'ai pas encore de domaine ni d'hébergement</label>
+        </fieldset>
+
+        <!-- Délai souhaité -->
+        <fieldset>
+            <legend>Délai souhaité</legend>
+            <label for="delai">Délai souhaité pour la création du site :</label>
+            <input type="date" id="delai" name="delai">
+        </fieldset>
+
+        <!-- Message complémentaire -->
+        <fieldset>
+            <legend>Message complémentaire</legend>
+            <label for="message">Précisions ou informations supplémentaires :</label>
+            <textarea id="message" name="message" rows="4" placeholder="Votre message"></textarea>
+        </fieldset>
+
+        <!-- Rappel souhaité -->
+        <fieldset>
+            <legend>Je souhaite être rappelé</legend>
+            <label><input type="radio" name="rappel" value="Oui"> Oui</label>
+            <label><input type="radio" name="rappel" value="Non" checked> Non</label>
+        </fieldset>
+
+        <button type="submit">Envoyer la demande</button>
+    </form>
+
+    <!-- Confirmation message -->
+    <div id="confirmation" class="confirmation-message">
+        Merci, votre demande a été envoyée...
+    </div>
+
+    <script>
+        document.getElementById('form').onsubmit = function(event) {
+            event.preventDefault(); // Empêche la soumission immédiate
+            document.getElementById('confirmation').style.display = 'block'; // Affiche le message de confirmation
+            setTimeout(function() {
+                document.getElementById('confirmation').style.display = 'none'; // Cache le message après 1.5 secondes
+                window.location.href = "mailto:contact@oiseauvolatile.com"; // Ouvre le client mail
+            }, 1500);
+        };
+    </script>
+</body>
+</html>
