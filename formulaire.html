@@ -189,6 +189,245 @@
             <label><input type="radio" name="rappel" value="Non" checked> Non</label>
         </fieldset>
 
+        <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Créer mon site - Oiseau Volatile</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background-color: #000; /* fond général noir */
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .abonnement-options {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin: 30px 0;
+      padding: 20px;
+      border: 2px solid #2ecc71; /* bordure verte émeraude */
+      background: #000;
+      border-radius: 15px;
+    }
+
+    .abonnement-option {
+      flex: 1 1 300px;
+      border: 2px solid black;
+      border-radius: 10px;
+      padding: 15px;
+      background: black;
+      color: white;
+      text-align: center;
+    }
+
+    .abonnement-option input {
+      margin-top: 10px;
+    }
+
+    .bubble-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .bubble-option {
+      background: #003366; /* bleu marine */
+      border: 2px solid white;
+      border-radius: 25px;
+      padding: 20px;
+      width: 200px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      color: white;
+    }
+
+    .prix-affiche {
+      font-size: 1.5em;
+      font-weight: bold;
+      text-align: center;
+      margin: 20px 0;
+      color: white;
+    }
+
+    .button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 30px;
+      font-size: 1.2em;
+      background-color: #0070ba; /* bleu clair PayPal */
+      border: none;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0060a1;
+    }
+
+    header nav ul {
+      list-style: none;
+      padding: 10px;
+      background-color: #003366; /* bleu marine */
+      display: flex;
+      justify-content: center;
+    }
+
+    header nav ul li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <script>
+    function updatePrice() {
+      let totalPrice = 0;
+      if (document.getElementById('site_personnel').checked) totalPrice += 80;
+      if (document.getElementById('ecommerce').checked) totalPrice += 350;
+      if (document.getElementById('blog').checked) totalPrice += 130;
+      if (document.getElementById('portfolio').checked) totalPrice += 170;
+      if (document.getElementById('site_entreprise').checked) totalPrice += 300;
+      if (document.getElementById('autres').checked) totalPrice += 35;
+      const mensuel = document.getElementById('mensuel').checked;
+      const vip = document.getElementById('vip').checked;
+      if (mensuel) totalPrice += 24;
+      if (vip) totalPrice += 288;
+      document.getElementById('totalPrice').innerText = "Total : " + totalPrice + " €";
+      document.getElementById('amount').value = totalPrice;
+    }
+
+    document.addEventListener('mousemove', function(e) {
+      const options = document.querySelectorAll('.bubble-option');
+      options.forEach(option => {
+        const mouseX = e.pageX;
+        const mouseY = e.pageY;
+        const optionX = option.offsetLeft + option.offsetWidth / 2;
+        const optionY = option.offsetTop + option.offsetHeight / 2;
+        const deltaX = mouseX - optionX;
+        const deltaY = mouseY - optionY;
+        option.style.transform = `translate(${deltaX / 20}px, ${deltaY / 20}px) scale(1.05)`;
+      });
+    });
+
+    // Vérification consentement RGPD avant envoi
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(event) {
+        const consentCheckbox = document.getElementById('rgpdConsent');
+        if (!consentCheckbox.checked) {
+          alert('Vous devez accepter la politique de confidentialité RGPD pour continuer.');
+          event.preventDefault();
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Retour à l'accueil</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="creation-site-container">
+      <h1 class="titre-gradient">Créer votre site avec Oiseau Volatile</h1>
+      <p>Choisissez les options pour votre futur site :</p>
+
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <div class="bubble-container">
+          <div class="bubble-option">
+            <input type="checkbox" id="site_personnel" onclick="updatePrice()" />
+            <label for="site_personnel">Site personnel - 80€</label>
+          </div>
+          <div class="bubble-option">
+            <input type="checkbox" id="blog" onclick="updatePrice()" />
+            <label for="blog">Blog - 130€</label>
+          </div>
+          <div class="bubble-option">
+            <input type="checkbox" id="portfolio" onclick="updatePrice()" />
+            <label for="portfolio">Portfolio - 170€</label>
+          </div>
+          <div class="bubble-option">
+            <input type="checkbox" id="site_entreprise" onclick="updatePrice()" />
+            <label for="site_entreprise">Site d'entreprise - 300€</label>
+          </div>
+          <div class="bubble-option">
+            <input type="checkbox" id="ecommerce" onclick="updatePrice()" />
+            <label for="ecommerce">E-commerce - 350€</label>
+          </div>
+          <div class="bubble-option">
+            <input type="checkbox" id="autres" onclick="updatePrice()" />
+            <label for="autres">Autres - 35€</label>
+          </div>
+        </div>
+
+        <div class="prix-affiche" id="totalPrice">Total : 0 €</div>
+
+        <input type="hidden" name="cmd" value="_xclick" />
+        <input type="hidden" name="business" value="brunswann135@gmail.com" />
+        <input type="hidden" name="item_name" value="Création Site Web" />
+        <input type="hidden" name="currency_code" value="EUR" />
+        <input type="hidden" name="amount" id="amount" value="0" />
+
+        <div class="abonnement-options">
+          <div class="abonnement-option">
+            <label for="mensuel">
+              <h3 style="color: #1e88e5;">Abonnement Mensuel</h3>
+              <p>24 € par mois</p>
+              <p><small>Suivi inclus + petites modifications à la demande.</small></p>
+            </label>
+            <input type="checkbox" id="mensuel" name="abonnement" value="mensuel" onclick="updatePrice()" />
+          </div>
+          <div class="abonnement-option">
+            <label for="vip">
+              <h3 style="color: gold; font-weight: bold; text-shadow: 1px 1px 2px #000;">Formule V.I.P</h3>
+              <p style="font-style: italic;">288 € par an (-35% de réduction)</p>
+              <p><small>Économisez 100,80 € soit 4 mois offerts !</small></p>
+              <p><small>Suivi inclus + petites modifications à la demande.</small></p>
+            </label>
+            <input type="checkbox" id="vip" name="abonnement" value="vip" onclick="updatePrice()" />
+          </div>
+        </div>
+
+        <!-- CASE RGPD obligatoire -->
+        <div style="text-align: center; margin: 20px 0; color: white;">
+          <input type="checkbox" id="rgpdConsent" name="rgpdConsent" required />
+          <label for="rgpdConsent" style="font-size: 0.9em;">
+            J'accepte que mes données soient collectées et utilisées conformément à la 
+            <a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees" target="_blank" style="color:#1e88e5; text-decoration: underline;">politique de confidentialité RGPD</a>.
+          </label>
+        </div>
+
+        <button type="submit" class="button">Payer via PayPal</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Oiseau Volatile. Tous droits réservés.</p>
+  </footer>
+</body>
+</html>
+
+
         <button type="submit">Envoyer la demande</button>
     </form>
 

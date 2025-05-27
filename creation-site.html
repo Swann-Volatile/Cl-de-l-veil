@@ -132,6 +132,18 @@
         option.style.transform = `translate(${deltaX / 20}px, ${deltaY / 20}px) scale(1.05)`;
       });
     });
+
+    // Vérification consentement RGPD avant envoi
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      form.addEventListener('submit', function(event) {
+        const consentCheckbox = document.getElementById('rgpdConsent');
+        if (!consentCheckbox.checked) {
+          alert('Vous devez accepter la politique de confidentialité RGPD pour continuer.');
+          event.preventDefault();
+        }
+      });
+    });
   </script>
 </head>
 <body>
@@ -204,17 +216,13 @@
           </div>
         </div>
 
-        <div class="abonnement-explanation" style="text-align: center; margin: 0 auto; max-width: 800px;">
-          <p class="description-title" style="font-weight: bold; font-size: 1.5em;">Pourquoi choisir l'une de mes formules ?</p>
-          <p>En optant pour l’une de mes formules, vous bénéficiez bien plus qu’un simple site web professionnel. Vous obtenez un espace sur mesure, conçu pour refléter votre identité.</p>
-          <p>Chaque abonnement inclut :</p>
-          <ul style="list-style-position: inside; text-align: left; margin: 0 auto; display: inline-block;">
-            <li>Un suivi technique dédié pour garantir la performance de votre site.</li>
-            <li>Des ajustements et rectifications selon vos besoins.</li>
-            <li>Un service personnalisé pour faire évoluer votre présence en ligne.</li>
-          </ul>
-          <p>Pour des besoins plus spécifiques, la formule "Autres" à 35 € s’applique.</p>
-          <p>Mon objectif : un site qui vous ressemble, qui s’adapte à votre vision et qui évolue avec vous.</p>
+        <!-- CASE RGPD obligatoire -->
+        <div style="text-align: center; margin: 20px 0; color: white;">
+          <input type="checkbox" id="rgpdConsent" name="rgpdConsent" required />
+          <label for="rgpdConsent" style="font-size: 0.9em;">
+            J'accepte que mes données soient collectées et utilisées conformément à la 
+            <a href="https://www.cnil.fr/fr/reglement-europeen-protection-donnees" target="_blank" style="color:#1e88e5; text-decoration: underline;">politique de confidentialité RGPD</a>.
+          </label>
         </div>
 
         <button type="submit" class="button">Payer via PayPal</button>
