@@ -5,22 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Clé de l'Éveil</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="img.webp" type="image/webp" />
+
+    <!-- Open Graph pour réseaux sociaux & Google -->
+    <meta property="og:title" content="Clé de l'Éveil" />
+    <meta property="og:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
+    <meta property="og:image" content="https://www.ton-site.com/img.webp" />
+    <meta property="og:url" content="https://www.ton-site.com/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Clé de l'Éveil" />
+    <meta name="twitter:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
+    <meta name="twitter:image" content="https://www.ton-site.com/img.webp" />
+
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at center, #000000, #0d0d0d);
-            height: 100vh;
-            color: white;
-            overflow-x: hidden;
-            transition: background 0.2s ease;
+        /* Image plus grande et responsive */
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;  /* taille max plus grande */
+            width: 90%;        /* responsive */
+            height: auto;
         }
 
+        /* Style des étoiles */
         .stars .star {
-            font-size: 24px;
+            font-size: 2.5rem; /* plus grandes */
             color: gray;
             cursor: pointer;
+            margin-right: 8px;
             transition: color 0.3s;
+            user-select: none;
         }
 
         .stars .star.gold {
@@ -34,7 +53,7 @@
         <nav>
             <ul>
                 <li><a href="formulaire.html">Formulaire</a></li>
-                <li><a href="mailto:brunswann135@gmail.com?subject=Demande%20de%20contact&body=Bonjour,%0AJe%20souhaite%20entrer%20en%20contact%20avec%20vous.">Contact</a></li>
+                <li><a href="mailto:volatile140@gmail.com?subject=Demande%20de%20contact&body=Bonjour,%0AJe%20souhaite%20entrer%20en%20contact%20avec%20vous.">Contact</a></li>
                 <li><a href="notice.html">Notice</a></li>
             </ul>
         </nav>
@@ -43,6 +62,9 @@
     <main>
         <h1 class="gradient-title">Clé de l'Éveil</h1>
         <p class="subtitle">Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes.</p>
+
+        <!-- Image visible sur la page -->
+        <img src="img.webp" alt="Image de présentation" />
 
         <!-- Bouton principal -->
         <div class="buttons">
@@ -53,7 +75,7 @@
 
         <!-- Compteur de visiteurs -->
         <div id="compteur-visiteurs" class="info-box" style="color: gold;">
-            <p>Nombre de visiteurs : <span id="visiteurs">10</span></p>
+            <p>Nombre de visiteurs : <span id="visiteurs">22</span></p>
         </div>
 
         <!-- Section des commentaires -->
@@ -112,7 +134,7 @@
             });
         }
 
-        // Fond dynamique
+        // Fond dynamique (complété si tu veux)
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
@@ -127,7 +149,3 @@
 
 </body>
 </html>
-
-
-
-
