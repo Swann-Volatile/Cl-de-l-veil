@@ -9,46 +9,31 @@
     <!-- Favicon initial (sera animé via JS) -->
     <link rel="icon" href="img/frames/frame1.png" type="image/png" id="favicon" />
 
-    <!-- Open Graph pour réseaux sociaux & Google (image statique) -->
+    <!-- Open Graph (image statique) -->
     <meta property="og:title" content="Clé de l'Éveil" />
     <meta property="og:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
-    <meta property="og:image" content="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" />
+    <meta property="og:image" content="img/img.webp" />
     <meta property="og:url" content="https://TON-NOM.github.io/TON-DEPOT/" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card (image statique) -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Clé de l'Éveil" />
     <meta name="twitter:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
-    <meta name="twitter:image" content="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" />
+    <meta name="twitter:image" content="img/img.webp" />
 
     <!-- Styles internes -->
     <style>
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 600px;
-            width: 90%;
-            height: auto;
-        }
-        .stars .star {
-            font-size: 2.5rem;
-            color: gray;
-            cursor: pointer;
-            margin-right: 8px;
-            transition: color 0.3s;
-            user-select: none;
-        }
-        .stars .star.gold {
-            color: gold;
-        }
+        /* Ton style existant reste inchangé */
+        img { display: block; margin: 20px auto; max-width: 600px; width: 90%; height: auto; }
+        .stars .star { font-size: 2.5rem; color: gray; cursor: pointer; margin-right: 8px; transition: color 0.3s; user-select: none; }
+        .stars .star.gold { color: gold; }
     </style>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
-
     <header>
         <nav>
             <ul>
@@ -64,7 +49,7 @@
         <p class="subtitle">Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes.</p>
 
         <!-- Image visible sur la page -->
-        <img src="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" alt="Image de présentation" />
+        <img src="img/img.webp" alt="Image de présentation" />
 
         <div class="buttons">
             <a href="creation-site.html" class="button-outline">Créer mon site</a>
@@ -100,7 +85,8 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script>
-        // Animation favicon via frames PNG
+        // --------------------------------------------------------
+        // Favicon animé via frames PNG
         const frames = [
             'img/frames/frame1.png',
             'img/frames/frame2.png',
@@ -112,9 +98,10 @@
         setInterval(() => {
             link.href = frames[current];
             current = (current + 1) % frames.length;
-        }, 200); // 200ms entre chaque frame
+        }, 200);
 
-        // Fonctions étoiles
+        // --------------------------------------------------------
+        // Ton JS existant pour étoiles
         function remplirEtoiles(note) {
             const stars = document.querySelectorAll('.stars .star');
             stars.forEach((star, index) => {
@@ -122,7 +109,8 @@
             });
         }
 
-        // Fond dynamique
+        // --------------------------------------------------------
+        // Fond dynamique suivant la souris
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
