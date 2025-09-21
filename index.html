@@ -6,8 +6,8 @@
     <title>Clé de l'Éveil</title>
     <link rel="stylesheet" href="style.css" />
     
-    <!-- Favicon animé -->
-    <link rel="icon" href="img/poisson.gif" type="image/gif" />
+    <!-- Favicon initial (sera animé via JS) -->
+    <link rel="icon" href="img/frames/frame1.png" type="image/png" id="favicon" />
 
     <!-- Open Graph pour réseaux sociaux & Google (image statique) -->
     <meta property="og:title" content="Clé de l'Éveil" />
@@ -24,7 +24,6 @@
 
     <!-- Styles internes -->
     <style>
-        /* Image plus grande et responsive */
         img {
             display: block;
             margin: 20px auto;
@@ -32,8 +31,6 @@
             width: 90%;
             height: auto;
         }
-
-        /* Style des étoiles */
         .stars .star {
             font-size: 2.5rem;
             color: gray;
@@ -42,7 +39,6 @@
             transition: color 0.3s;
             user-select: none;
         }
-
         .stars .star.gold {
             color: gold;
         }
@@ -70,7 +66,6 @@
         <!-- Image visible sur la page -->
         <img src="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" alt="Image de présentation" />
 
-        <!-- Bouton principal -->
         <div class="buttons">
             <a href="creation-site.html" class="button-outline">Créer mon site</a>
         </div>
@@ -85,17 +80,14 @@
             Un outil pour te lancer, te révéler, te transformer.
         </p>
 
-        <!-- Compteur de visiteurs -->
         <div id="compteur-visiteurs" class="info-box" style="color: gold;">
             <p>Nombre de visiteurs : <span id="visiteurs">94</span></p>
         </div>
 
-        <!-- Politique de confidentialité -->
         <a href="politique-de-confidentialité.html" class="privacy-link">
             <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
         </a>
 
-        <!-- Liste des commentaires -->
         <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
             <!-- Les commentaires apparaîtront ici dynamiquement -->
         </div>
@@ -108,14 +100,25 @@
     <!-- Scripts -->
     <script src="script.js"></script>
     <script>
+        // Animation favicon via frames PNG
+        const frames = [
+            'img/frames/frame1.png',
+            'img/frames/frame2.png',
+            'img/frames/frame3.png',
+            'img/frames/frame4.png'
+        ];
+        let current = 0;
+        const link = document.getElementById('favicon');
+        setInterval(() => {
+            link.href = frames[current];
+            current = (current + 1) % frames.length;
+        }, 200); // 200ms entre chaque frame
+
+        // Fonctions étoiles
         function remplirEtoiles(note) {
             const stars = document.querySelectorAll('.stars .star');
             stars.forEach((star, index) => {
-                if (index < note) {
-                    star.classList.add('gold');
-                } else {
-                    star.classList.remove('gold');
-                }
+                star.classList.toggle('gold', index < note);
             });
         }
 
@@ -123,22 +126,11 @@
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
-
             const r = Math.floor(20 + 100 * x);
             const g = Math.floor(50 + 100 * y);
             const b = Math.floor(100 + 120 * (1 - x));
-
-            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgb(${r},${g},${b}), black)`;
+            document.body.style.background = `radial-gradient(circle at ${x*100}% ${y*100}%, rgb(${r},${g},${b}), black)`;
         });
     </script>
-
 </body>
 </html>
-
-
-
-
-
-
-
-
