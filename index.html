@@ -5,30 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Clé de l'Éveil</title>
     <link rel="stylesheet" href="style.css" />
+    
+    <!-- Favicon animé -->
+    <link rel="icon" href="img/poisson.gif" type="image/gif" />
 
-    <!-- Favicon initial (sera animé via JS) -->
-    <link rel="icon" href="img/frames/frame1.png" type="image/png" id="favicon" />
-
-    <!-- Open Graph -->
+    <!-- Open Graph pour réseaux sociaux & Google (image statique) -->
     <meta property="og:title" content="Clé de l'Éveil" />
     <meta property="og:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
-    <meta property="og:image" content="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" />
-    <meta property="og:url" content="https://TON-NOM.github.io/TON-DEPOT/" />
+    <meta property="og:image" content="img/img.webp" />
+    <meta property="og:url" content="https://www.ton-site.com/" />
     <meta property="og:type" content="website" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card (image statique) -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Clé de l'Éveil" />
     <meta name="twitter:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
-    <meta name="twitter:image" content="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" />
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <meta name="twitter:image" content="img/img.webp" />
 </head>
 <body>
+    <!-- Ton contenu ici -->
+</body>
+</html>
 
-    <!-- Lumière souris -->
-    <div id="mouse-light"></div>
+    <style>
+        /* Image plus grande et responsive */
+        img {
+            display: block;
+            margin: 20px auto;
+            max-width: 600px;  /* taille max plus grande */
+            width: 90%;        /* responsive */
+            height: auto;
+        }
+
+        /* Style des étoiles */
+        .stars .star {
+            font-size: 2.5rem; /* plus grandes */
+            color: gray;
+            cursor: pointer;
+            margin-right: 8px;
+            transition: color 0.3s;
+            user-select: none;
+        }
+
+        .stars .star.gold {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
 
     <header>
         <nav>
@@ -44,67 +68,92 @@
         <h1 class="gradient-title">Clé de l'Éveil</h1>
         <p class="subtitle">Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes.</p>
 
-        <img src="https://TON-NOM.github.io/TON-DEPOT/img/img.webp" alt="Image de présentation" />
+        <!-- Image visible sur la page -->
+        <img src="img.webp" alt="Image de présentation" />
 
+        <!-- Bouton principal -->
         <div class="buttons">
             <a href="creation-site.html" class="button-outline">Créer mon site</a>
         </div>
 
-        <p>
-            Créer ton site, c’est reprendre le pouvoir.<br/>
-            Clé de l’Éveil propose des sites simples,<br/>
-            humains et uniques.<br/>
-            Pour celles et ceux qui veulent créer avec style,<br/>
-            sens et liberté.<br/>
-            Pas de blabla — juste du vrai.<br/>
-            Un outil pour te lancer, te révéler, te transformer.
-        </p>
+        <br/>
+        Créer ton site, c’est reprendre le pouvoir.<br/>
+        Clé de l’Éveil propose des sites simples,<br/>
+        humains et uniques.<br/>
+        Pour celles et ceux qui veulent créer avec style,<br/>
+        sens et liberté.<br/>
+        Pas de blabla — juste du vrai.<br/>
+        Un outil pour te lancer, te révéler, te transformer.<br/>
 
+        <br/>
+
+        <!-- Compteur de visiteurs -->
         <div id="compteur-visiteurs" class="info-box" style="color: gold;">
-            <p>Nombre de visiteurs : <span id="visiteurs">0</span></p>
+            <p>Nombre de visiteurs : <span id="visiteurs">94</span></p>
         </div>
 
-        <!-- Formulaire de commentaires -->
-        <div class="form-container">
-            <form id="form-commentaire">
-                <div class="form-group">
-                    <label for="commentaire">Votre commentaire :</label>
-                    <textarea id="commentaire" placeholder="Écrivez votre avis ici..."></textarea>
-                </div>
+        <br>
+        <br>
+        <br>
 
-                <div class="form-group">
-                    <label>Note :</label>
-                    <div id="note">
-                        <img data-note="1" src="img/star.png" alt="Étoile 1">
-                        <img data-note="2" src="img/star.png" alt="Étoile 2">
-                        <img data-note="3" src="img/star.png" alt="Étoile 3">
-                        <img data-note="4" src="img/star.png" alt="Étoile 4">
-                        <img data-note="5" src="img/star.png" alt="Étoile 5">
-                    </div>
-                </div>
+ 
 
-                <div class="form-group">
-                    <input type="checkbox" id="rgpdConsent">
-                    <label for="rgpdConsent">J'accepte la politique de confidentialité RGPD</label>
-                </div>
 
-                <button type="submit">Envoyer</button>
-            </form>
+            <!-- Icône politique -->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+            <a href="politique-de-confidentialité.html" class="privacy-link">
+                <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
+            </a>
+
+            <br/><br/>
+
+            <!-- Liste des commentaires -->
+            <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
+                <!-- Les commentaires apparaîtront ici dynamiquement -->
+            </div>
         </div>
-
-        <div>Moyenne : <span id="moyenne">0</span></div>
-        <div id="liste-commentaires"></div>
-
-        <a href="politique-de-confidentialité.html" class="privacy-link">
-            <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
-        </a>
     </main>
 
     <footer>
         <p>© 2025 Oiseau Volatile. Tous droits réservés.</p>
     </footer>
 
-    <!-- Script séparé -->
+    <!-- Scripts -->
     <script src="script.js"></script>
+    <script>
+        function remplirEtoiles(note) {
+            const stars = document.querySelectorAll('.stars .star');
+            stars.forEach((star, index) => {
+                if (index < note) {
+                    star.classList.add('gold');
+                } else {
+                    star.classList.remove('gold');
+                }
+            });
+        }
+
+        // Fond dynamique (complété si tu veux)
+        document.addEventListener('mousemove', function(e) {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+
+            const r = Math.floor(20 + 100 * x);
+            const g = Math.floor(50 + 100 * y);
+            const b = Math.floor(100 + 120 * (1 - x));
+
+            document.body.style.background = `radial-gradient(circle at ${x * 100}% ${y * 100}%, rgb(${r},${g},${b}), black)`;
+        });
+    </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
