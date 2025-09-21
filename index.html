@@ -6,8 +6,8 @@
     <title>Clé de l'Éveil</title>
     <link rel="stylesheet" href="style.css" />
     
-    <!-- Favicon animé -->
-    <link rel="icon" href="img.webp" type="img.webp" />
+    <!-- Favicon (ne bouge pas) -->
+    <link rel="icon" href="img.webp" type="image/webp" />
 
     <!-- Open Graph pour réseaux sociaux & Google (image statique) -->
     <meta property="og:title" content="Clé de l'Éveil" />
@@ -21,36 +21,6 @@
     <meta name="twitter:title" content="Clé de l'Éveil" />
     <meta name="twitter:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
     <meta name="twitter:image" content="img/img.webp" />
-</head>
-<body>
-    <!-- Ton contenu ici -->
-</body>
-</html>
-
-    <style>
-        /* Image plus grande et responsive */
-        img {
-            display: block;
-            margin: 20px auto;
-            max-width: 600px;  /* taille max plus grande */
-            width: 90%;        /* responsive */
-            height: auto;
-        }
-
-        /* Style des étoiles */
-        .stars .star {
-            font-size: 2.5rem; /* plus grandes */
-            color: gray;
-            cursor: pointer;
-            margin-right: 8px;
-            transition: color 0.3s;
-            user-select: none;
-        }
-
-        .stars .star.gold {
-            color: gold;
-        }
-    </style>
 </head>
 <body>
 
@@ -68,8 +38,8 @@
         <h1 class="gradient-title">Clé de l'Éveil</h1>
         <p class="subtitle">Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes.</p>
 
-        <!-- Image visible sur la page -->
-        <img src="img.webp" alt="Image de présentation" />
+        <!-- Image visible sur la page (modifiée en GIF) -->
+        <img src="poisson.gif" alt="Image de présentation" />
 
         <!-- Bouton principal -->
         <div class="buttons">
@@ -96,21 +66,17 @@
         <br>
         <br>
 
- 
+        <!-- Icône politique -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+        <a href="politique-de-confidentialité.html" class="privacy-link">
+            <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
+        </a>
 
+        <br/><br/>
 
-            <!-- Icône politique -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-            <a href="politique-de-confidentialité.html" class="privacy-link">
-                <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
-            </a>
-
-            <br/><br/>
-
-            <!-- Liste des commentaires -->
-            <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
-                <!-- Les commentaires apparaîtront ici dynamiquement -->
-            </div>
+        <!-- Liste des commentaires -->
+        <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
+            <!-- Les commentaires apparaîtront ici dynamiquement -->
         </div>
     </main>
 
@@ -132,7 +98,7 @@
             });
         }
 
-        // Fond dynamique (complété si tu veux)
+        // Fond dynamique
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
@@ -147,14 +113,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
