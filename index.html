@@ -21,25 +21,21 @@
     <meta name="twitter:title" content="Clé de l'Éveil" />
     <meta name="twitter:description" content="Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes." />
     <meta name="twitter:image" content="img/img.webp" />
-</head>
-<body>
-    <!-- Ton contenu ici -->
-</body>
-</html>
 
+    <!-- Styles internes -->
     <style>
         /* Image plus grande et responsive */
         img {
             display: block;
             margin: 20px auto;
-            max-width: 600px;  /* taille max plus grande */
-            width: 90%;        /* responsive */
+            max-width: 600px;
+            width: 90%;
             height: auto;
         }
 
         /* Style des étoiles */
         .stars .star {
-            font-size: 2.5rem; /* plus grandes */
+            font-size: 2.5rem;
             color: gray;
             cursor: pointer;
             margin-right: 8px;
@@ -51,6 +47,9 @@
             color: gold;
         }
     </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 <body>
 
@@ -69,48 +68,36 @@
         <p class="subtitle">Osez créer, osez exister. Un site web pour ceux qui veulent faire bouger les lignes.</p>
 
         <!-- Image visible sur la page -->
-        <img src="img.webp" alt="Image de présentation" />
+        <img src="img/img.webp" alt="Image de présentation" />
 
         <!-- Bouton principal -->
         <div class="buttons">
             <a href="creation-site.html" class="button-outline">Créer mon site</a>
         </div>
 
-        <br/>
-        Créer ton site, c’est reprendre le pouvoir.<br/>
-        Clé de l’Éveil propose des sites simples,<br/>
-        humains et uniques.<br/>
-        Pour celles et ceux qui veulent créer avec style,<br/>
-        sens et liberté.<br/>
-        Pas de blabla — juste du vrai.<br/>
-        Un outil pour te lancer, te révéler, te transformer.<br/>
-
-        <br/>
+        <p>
+            Créer ton site, c’est reprendre le pouvoir.<br/>
+            Clé de l’Éveil propose des sites simples,<br/>
+            humains et uniques.<br/>
+            Pour celles et ceux qui veulent créer avec style,<br/>
+            sens et liberté.<br/>
+            Pas de blabla — juste du vrai.<br/>
+            Un outil pour te lancer, te révéler, te transformer.
+        </p>
 
         <!-- Compteur de visiteurs -->
         <div id="compteur-visiteurs" class="info-box" style="color: gold;">
             <p>Nombre de visiteurs : <span id="visiteurs">94</span></p>
         </div>
 
-        <br>
-        <br>
-        <br>
+        <!-- Politique de confidentialité -->
+        <a href="politique-de-confidentialité.html" class="privacy-link">
+            <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
+        </a>
 
- 
-
-
-            <!-- Icône politique -->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-            <a href="politique-de-confidentialité.html" class="privacy-link">
-                <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
-            </a>
-
-            <br/><br/>
-
-            <!-- Liste des commentaires -->
-            <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
-                <!-- Les commentaires apparaîtront ici dynamiquement -->
-            </div>
+        <!-- Liste des commentaires -->
+        <div id="liste-commentaires" class="comment-list" style="max-height: 300px; overflow-y: auto;">
+            <!-- Les commentaires apparaîtront ici dynamiquement -->
         </div>
     </main>
 
@@ -132,7 +119,7 @@
             });
         }
 
-        // Fond dynamique (complété si tu veux)
+        // Fond dynamique
         document.addEventListener('mousemove', function(e) {
             const x = e.clientX / window.innerWidth;
             const y = e.clientY / window.innerHeight;
@@ -147,6 +134,7 @@
 
 </body>
 </html>
+
 
 
 
