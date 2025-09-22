@@ -30,7 +30,7 @@
         img {
             display: block;
             margin: 20px auto;
-            max-width: 600px; /* ou modifie selon ce que tu veux */
+            max-width: 600px;
             width: 90%;
             height: auto;
         }
@@ -56,8 +56,29 @@
             left: 0;
             width: 100%;
             height: 100%;
-            z-index: -1; /* derrière le contenu */
+            z-index: -1;
             background: #001f3f; /* bleu sombre */
+        }
+
+        /* Bouton harmonieux */
+        .buttons {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .button-outline {
+            display: inline-block;
+            padding: 10px 20px;
+            border: 2px solid #00aaff;
+            color: #00aaff;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .button-outline:hover {
+            background: #00aaff;
+            color: #001f3f;
         }
     </style>
 </head>
@@ -71,7 +92,6 @@
                 <li><a href="formulaire.html">Formulaire</a></li>
                 <li><a href="mailto:volatile140@gmail.com?subject=Demande%20de%20contact&body=Bonjour,%0AJe%20souhaite%20entrer%20en%20contact%20avec%20vous.">Contact</a></li>
                 <li><a href="notice.html">Notice</a></li>
-                <li><a href="#parler-de-moi">Parler de moi</a></li> <!-- lien ajouté -->
             </ul>
         </nav>
     </header>
@@ -101,17 +121,12 @@
             <p>Nombre de visiteurs : <span id="visiteurs">94</span></p>
         </div>
 
-        <!-- Section Parler de moi -->
-        <section id="parler-de-moi" class="about">
-            <h2>Parler de moi</h2>
-            <p><strong>Créer des sites, c’est d’abord une histoire de passion</strong></p>
-            <p>J’ai découvert le web à 15 ans. Depuis, je n’ai jamais arrêté d’apprendre, de tester, de me planter parfois, mais toujours de progresser. Aujourd’hui, je veux mettre ces années d’expérience au service de celles et ceux qui ont un projet, une idée ou simplement l’envie d’exister en ligne.</p>
+        <!-- Nouveau bouton Parler de moi -->
+        <div class="buttons">
+            <a href="parler-de-moi.html" class="button-outline">Parler de moi</a>
+        </div>
 
-            <p>Je propose des sites accessibles, bien faits, sans bullshit. Pas besoin d’un gros budget pour avoir quelque chose de propre, clair et utile. Mon but, c’est que chacun puisse avancer, même si tout ne marche pas du premier coup. Parce que même les échecs peuvent servir de tremplin.</p>
-
-            <p>Ce qui compte pour moi, c’est que ton site te ressemble et que tu comprennes ce qu’on fait ensemble. Pas juste un service, mais une collaboration.</p>
-        </section>
-
+        <br>
         <a href="politique-de-confidentialité.html" class="privacy-link">
             <i class="fas fa-fingerprint fingerprint"></i> Politique de confidentialité
         </a>
@@ -146,20 +161,6 @@
             "onhover": { "enable": true, "mode": "grab" }
           }
         }
-      });
-
-      // Initialisation scroll fluide
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          const targetId = this.getAttribute('href');
-          if (!targetId || targetId === '#') return;
-          const target = document.querySelector(targetId);
-          if (target) {
-            e.preventDefault();
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            history.pushState(null, '', targetId);
-          }
-        });
       });
     </script>
 </body>
