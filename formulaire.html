@@ -116,7 +116,6 @@ body {
             <label><input type="radio" name="type_site" value="Site personnel" required> Site personnel</label>
             <label><input type="radio" name="type_site" value="Blog"> Blog</label>
             <label><input type="radio" name="type_site" value="Portfolio"> Portfolio</label>
-            <label><input type="radio" name="type_site" value="E-commerce"> E-commerce</label>
             <label><input type="radio" name="type_site" value="Autre"> Autre :</label>
             <input type="text" name="type_site_autre" placeholder="Précisez le type de site">
         </fieldset>
@@ -302,7 +301,6 @@ body {
     function updatePrice() {
       let totalPrice = 0;
       if (document.getElementById('site_personnel').checked) totalPrice += 80;
-      if (document.getElementById('ecommerce').checked) totalPrice += 350;
       if (document.getElementById('blog').checked) totalPrice += 130;
       if (document.getElementById('portfolio').checked) totalPrice += 170;
       if (document.getElementById('site_entreprise').checked) totalPrice += 300;
@@ -452,6 +450,7 @@ body {
     </script>
 </body>
 </html>l>
+
 
 
 
